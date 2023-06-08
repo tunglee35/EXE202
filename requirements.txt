@@ -1,3 +1,3 @@
 streamlit-on-Hover-tabs
 streamlit==1.22.0
-bardapi
+bardapi==0.1.11
