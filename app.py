@@ -9,7 +9,7 @@ import pdb
 from bardapi import Bard
 import os
 # os.environ['_BARD_API_KEY']='XQh4bKIq8HK-lA5_SB7kikDJgCTziUz4pASEJ0y7dnp30YTr1oMJ2esSjRCv4XiAcv5IcQ.'
-token='XQh4bKIq8HK-lA5_SB7kikDJgCTziUz4pASEJ0y7dnp30YTr1oMJ2esSjRCv4XiAcv5IcQ.'
+token='XQh4bDookzK93IsXBIVMdfHZBmisNcpHCtZAqqXsuvvveaxOgO9_ONjxE3zJDX3DJEy5Ug.'
 
 bard = Bard(token=token, timeout=10)
 
