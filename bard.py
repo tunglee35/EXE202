@@ -4,6 +4,7 @@ import random
 import json
 import re
 import requests
+import logging
 
 ALLOWED_LANGUAGES = {"en", "ko", "ja", "english", "korean", "japanese"}
 DEFAULT_LANGUAGE = "en"
@@ -101,7 +102,7 @@ class Bard:
             "at": self.SNlM0e,
         }
 
-        print(f'DEBUG: data: {data}')
+        logging.debug(f'DEBUG: data: {data}')
 
         # Get response
         resp = self.session.post(
@@ -112,7 +113,7 @@ class Bard:
             proxies=self.proxies,
         )
 
-        print(f'DEBUG: Response from BARD: {resp}')
+        logging.debug(f'DEBUG: Response from BARD: {resp}')
 
         # Post-processing of response
         resp_dict = json.loads(resp.content.splitlines()[3])[0][2]

@@ -15,9 +15,9 @@ snim0e = bard._get_snim0e();
 logging.debug(f'DEBUG: snim0e: #{snim0e}')
 
 def get_answer(query):
-    print(f'DEBUG: Query: #{query}')
+    logging.debug(f'DEBUG: Query: #{query}')
     ans = bard.get_answer(query)
-    print(f'DEBUG: Response from bard API: #{ans}')
+    logging.debug(f'DEBUG: Response from bard API: #{ans}')
     return ans['content']
 
 
