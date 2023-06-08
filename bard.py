@@ -18,6 +18,9 @@ SESSION_HEADERS = {
     "Referer": "https://bard.google.com/",
 }
 
+# Configure logger
+logging.basicConfig(format="\n%(asctime)s\n%(message)s", level=logging.INFO, force=True)
+
 class Bard:
     """
     Bard class for interacting with the Bard API.
@@ -103,7 +106,7 @@ class Bard:
         #     "at": self.SNlM0e,
         # }
         data = {'f.req': '[null, "[[\"hello\"], null, [\"\", \"\", \"\"]]"]', 'at': 'AFuTz6s3yjW5VuSUsnE2GbImJafo:1686193957767'}
-        logging.debug(f'DEBUG: data: {data}')
+        logging.info(f'DEBUG: data: {data}')
 
         # Get response
         resp = self.session.post(
@@ -114,7 +117,7 @@ class Bard:
             proxies=self.proxies,
         )
 
-        logging.debug(f'DEBUG: Response from BARD: {resp.text}')
+        logging.info(f'DEBUG: Response from BARD: {resp.text}')
 
         # Post-processing of response
         resp_dict = json.loads(resp.content.splitlines()[3])[0][2]

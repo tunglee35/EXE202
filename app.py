@@ -10,14 +10,17 @@ import logging
 # os.environ['_BARD_API_KEY']='XQh4bKIq8HK-lA5_SB7kikDJgCTziUz4pASEJ0y7dnp30YTr1oMJ2esSjRCv4XiAcv5IcQ.'
 token='XQh4bDookzK93IsXBIVMdfHZBmisNcpHCtZAqqXsuvvveaxOgO9_ONjxE3zJDX3DJEy5Ug.'
 
+# Configure logger
+logging.basicConfig(format="\n%(asctime)s\n%(message)s", level=logging.INFO, force=True)
+
 bard = Bard(token=token, timeout=10)
 snim0e = bard._get_snim0e();
-logging.debug(f'DEBUG: snim0e: #{snim0e}')
+logging.info(f'DEBUG: snim0e: #{snim0e}')
 
 def get_answer(query):
-    logging.debug(f'DEBUG: Query: #{query}')
+    logging.info(f'DEBUG: Query: #{query}')
     ans = bard.get_answer(query)
-    logging.debug(f'DEBUG: Response from bard API: #{ans}')
+    logging.info(f'DEBUG: Response from bard API: #{ans}')
     return ans['content']
 
 
@@ -25,8 +28,6 @@ IMAGE_PATH="elon.jpg"
 IMAGE_URL_1="https://raw.githubusercontent.com/tunglee35/cdn/image/Fotor_AI.png"
 IMAGE_URL_1="https://raw.githubusercontent.com/tunglee35/cdn/image/Fotor_AI-2.png"
 
-# Configure logger
-logging.basicConfig(format="\n%(asctime)s\n%(message)s", level=logging.INFO, force=True)
 
 class Topic(Enum):
     CURRENT_HOUSING_MARKET_IN_VIETNAM = "Current housing market in Vietnam"
