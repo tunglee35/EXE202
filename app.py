@@ -10,8 +10,16 @@ from bardapi import Bard
 import os
 # os.environ['_BARD_API_KEY']='XQh4bKIq8HK-lA5_SB7kikDJgCTziUz4pASEJ0y7dnp30YTr1oMJ2esSjRCv4XiAcv5IcQ.'
 token='XQh4bDookzK93IsXBIVMdfHZBmisNcpHCtZAqqXsuvvveaxOgO9_ONjxE3zJDX3DJEy5Ug.'
-
+cookies = {
+    '__Secure-1PSIDCC': 'AP8dLtw0m5V4CmIzhG_IOeUtIOlfbwnVJPpD0T7u9ysFokrNHV-El__0TomixENOeP7FFvPo',
+    '__Secure-3PSID': 'XQh4bKIq8HK-lA5_SB7kikDJgCTziUz4pASEJ0y7dnp30YTr1n0ZA-H1T0RnD5MgK05mqg.',
+    '__Secure-3PSIDCC': 'AP8dLtyJ8BrJRDqRqlXHdDXBKbx7G2lP4Tnk6-PynFx0gR8EaiGdzMzHiyzo6_PpwQuZ1ZAl5Q',
+    '__Secure-1PSID': 'XQh4bKIq8HK-lA5_SB7kikDJgCTziUz4pASEJ0y7dnp30YTr1oMJ2esSjRCv4XiAcv5IcQ.',
+    'NID=511': 'H60PBmQkE9nzDdS9RhI7DSWoIJzo4TUiyV3_F9QNbEtJDUzcuT20h2EDZtnenAAb-rjmPCfcDFJMDyoEysP-l0seVdyKRX5nkt3KXuEATVy_0-KSEAiSTnA44VMxFVU1jg81Zmx_d5YcCwSm37vWLztaKnKCZMPrFB_SBkiIEEA'  
+}
 bard = Bard(token=token, timeout=10)
+snim0e = bard._get_snim0e();
+print(f'DEBUG: snim0e: #{snim0e}')
 
 def get_answer(query):
     print(f'DEBUG: Query: #{query}')
