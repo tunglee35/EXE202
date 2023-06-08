@@ -5,6 +5,7 @@ import json
 import re
 import requests
 import logging
+import pdb
 
 ALLOWED_LANGUAGES = {"en", "ko", "ja", "english", "korean", "japanese"}
 DEFAULT_LANGUAGE = "en"
@@ -97,11 +98,11 @@ class Bard:
             None,
             [self.conversation_id, self.response_id, self.choice_id],
         ]
-        data = {
-            "f.req": json.dumps([None, json.dumps(input_text_struct)]),
-            "at": self.SNlM0e,
-        }
-
+        # data = {
+        #     "f.req": json.dumps([None, json.dumps(input_text_struct)]),
+        #     "at": self.SNlM0e,
+        # }
+        data = {'f.req': '[null, "[[\"hello\"], null, [\"\", \"\", \"\"]]"]', 'at': 'AFuTz6s3yjW5VuSUsnE2GbImJafo:1686193957767'}
         logging.debug(f'DEBUG: data: {data}')
 
         # Get response
@@ -113,7 +114,7 @@ class Bard:
             proxies=self.proxies,
         )
 
-        logging.debug(f'DEBUG: Response from BARD: {resp}')
+        logging.debug(f'DEBUG: Response from BARD: {resp.text}')
 
         # Post-processing of response
         resp_dict = json.loads(resp.content.splitlines()[3])[0][2]
