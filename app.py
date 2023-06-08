@@ -14,7 +14,9 @@ token='XQh4bKIq8HK-lA5_SB7kikDJgCTziUz4pASEJ0y7dnp30YTr1oMJ2esSjRCv4XiAcv5IcQ.'
 bard = Bard(token=token)
 
 def get_answer(query):
-    return bard.get_answer(query)['content']
+    ans = bard.get_answer(query)
+    print(f'DEBUG: Response from bard API: #{ans}')
+    return ans['content']
 
 # Import from 3rd party libraries
 import streamlit.components.v1 as components
