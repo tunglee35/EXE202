@@ -11,7 +11,7 @@ import os
 # os.environ['_BARD_API_KEY']='XQh4bKIq8HK-lA5_SB7kikDJgCTziUz4pASEJ0y7dnp30YTr1oMJ2esSjRCv4XiAcv5IcQ.'
 token='XQh4bKIq8HK-lA5_SB7kikDJgCTziUz4pASEJ0y7dnp30YTr1oMJ2esSjRCv4XiAcv5IcQ.'
 
-bard = Bard(token=token)
+bard = Bard(token=token, timeout=10)
 
 def get_answer(query):
     print(f'DEBUG: Query: #{query}')
